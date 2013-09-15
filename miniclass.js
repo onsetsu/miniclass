@@ -5,7 +5,12 @@
 		
 		var Class = function() {};
 
-		var inject = function(properties) {};
+		var inject = function(properties) {
+			// copy given properties
+			for(var name in properties || {}) {
+				this.prototype[name] = properties[name];
+			};
+		};
 		
 		Class.subclass = function(properties) {
 			

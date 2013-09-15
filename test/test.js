@@ -94,6 +94,34 @@ TestCase("testMiniClass", {
 		
 		new SubSubClass();
 		assertTrue(called);
+	},
+
+	// inject methods into already defined classes
+	"testInject": function()
+	{
+		var called = false;
+
+		var SubClass = mini.Class.subclass({
+			methodDefinedBySubclassing: function() {
+				return 1;
+			},
+			overwrittenMethod: function() {
+				return 2;
+			}
+		});
+		SubClass.inject({
+			overwrittenMethod: function() {
+				return 3;
+			},
+			methodOnlyDefinedByInjecting: function() {
+				return 4;
+			}
+		});
+		
+		var subClassObject = new SubClass();
+		assertEquals(1, subClassObject.methodDefinedBySubclassing());
+		assertEquals(3, subClassObject.overwrittenMethod());
+		assertEquals(4, subClassObject.methodOnlyDefinedByInjecting());
 	}
 
 });
