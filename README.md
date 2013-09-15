@@ -3,36 +3,36 @@ miniclass.js
 
 A tiny JavaScript class library.
 
-Usage
------
+### Usage ###
 
 Simply include the file `miniclass.js` into your html.
 
-    // Use subclass method of mini.Class and its subclasses.
-    var SubClass = mini.Class.subclass({
-        doSomething: function() {
-            return "foobar";
-        }
-    });
-    
-    // If specified the initialize function is call on construction.
-    SubSubClass = SubClass.subclass({
-        initialize: function() {
-            this.doSomething();
-        }
-    });
-    
-    new SubSubClass(); // calls initialize
-    
-    // Inject new behaviour into defined classes.
-    SubClass.inject({
-        doEvenMore: function() {
-            return "blub";
-        }
-    });
+ ```javascript
+// Use subclass method of mini.Class and its subclasses.
+var SubClass = mini.Class.subclass({
+    doSomething: function() {
+        return "foobar";
+    }
+});
 
-MIT License
------
+// If specified the initialize function is call on construction.
+SubSubClass = SubClass.subclass({
+    initialize: function() {
+        this.doSomething();
+    }
+});
+
+new SubSubClass(); // calls initialize
+
+// Inject new behaviour into defined classes.
+SubClass.inject({
+    doEvenMore: function() {
+        return "blub";
+    }
+});
+```
+
+### MIT License ###
 
 Copyright (c) 2013 Stefan Lehmann (Onsetsu)
 
