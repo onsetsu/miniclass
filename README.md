@@ -4,7 +4,6 @@ miniclass.js
 A tiny JavaScript class library.
 
 ### Usage ###
-=========
 
 Simply include the file `miniclass.js` into your html.
 
@@ -34,7 +33,6 @@ SubClass.inject({
 ```
 
 ### MIT License ###
-=========
 
 Copyright (c) 2013 Stefan Lehmann (Onsetsu)
 
