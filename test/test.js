@@ -1,4 +1,4 @@
-TestCase("testScarlet", {
+TestCase("testMiniClass", {
 	setUp: function() 
 	{		
 	},
@@ -7,9 +7,10 @@ TestCase("testScarlet", {
 	{
 	},
 	
-	"testMiniClass": function()
+	"testMiniClassExists": function()
 	{
-		assert(false);
+		assertNotUndefined(mini.Class);
+		assertNotUndefined(new mini.Class);
 	}
 
 });
